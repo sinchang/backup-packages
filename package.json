@@ -1,0 +1,35 @@
+{
+  "name": "backup-packages",
+  "version": "0.0.0",
+  "description": "backup yarn global packages with github gist",
+  "repository": {
+    "url": "sinchang/backup-packages",
+    "type": "git"
+  },
+  "main": "index.js",
+  "bin": {
+    "backup-packages": "cli.js"
+  },
+  "files": ["index.js", "cli.js"],
+  "scripts": {
+    "test": "npm run lint && jest",
+    "lint": "standard",
+    "lint:fix": "standard --fix"
+  },
+  "author": "sinchang <sinchangwen@gmail.com>",
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "cac": "^4.0.0",
+    "conf": "^1.4.0",
+    "gh-got": "^7.0.0",
+    "update-notifier": "^2.3.0",
+    "yarn-global-modules": "^1.0.1"
+  },
+  "devDependencies": {
+    "jest-cli": "^22.1.4",
+    "standard": "^10.0.0"
+  }
+}
