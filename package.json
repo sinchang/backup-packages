@@ -1,6 +1,6 @@
 {
   "name": "backup-packages",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "backup yarn global packages with github gist",
   "repository": {
     "url": "sinchang/backup-packages",
