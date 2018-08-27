@@ -3,6 +3,7 @@
 const cac = require('cac')
 const Backup = require('./')
 const cli = cac()
+const columnify = require('columnify')
 
 const backup = new Backup()
 
@@ -72,6 +73,21 @@ cli.command('sync', {
 
     process.exit(1)
   }
+})
+
+cli.command('list', {
+  desc: 'Fetch all global npm package'
+}, () => {
+  const json = backup.getContent().toString()
+  const dependencies = JSON.parse(json).dependencies
+  let data = {}
+
+  for (let k in dependencies) {
+    data[k] = dependencies[k].substr(1)
+  }
+
+  const columns = columnify(data, {columns: ['Name', 'Version']})
+  console.log(columns)
 })
 
 cli.parse()
